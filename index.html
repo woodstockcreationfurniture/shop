@@ -273,6 +273,12 @@
   .modal textarea{width:100%; min-height:180px; border:1.5px solid #e6ddcf; border-radius:10px; padding:12px; font-family:inherit; font-size:.83rem; color:#3a2f22; margin:10px 0;}
   .modal-actions{display:flex; gap:10px; flex-wrap:wrap;}
   .modal-actions a,.modal-actions button{flex:1; text-align:center; padding:12px; border-radius:10px; font-weight:700; font-size:.84rem; cursor:pointer; border:none;}
+  .send-status{display:flex; align-items:center; gap:8px; padding:10px 14px; border-radius:10px; font-size:.82rem; font-weight:700; margin:10px 0; display:none;}
+  .send-status.show{display:flex;}
+  .send-status.pending{background:#fff6e0; color:#7a5c22;}
+  .send-status.ok{background:#e6f6ec; color:#1e7a45;}
+  .send-status.fail{background:#fdecec; color:#a5312a;}
+  .send-status .dot{width:8px; height:8px; border-radius:50%; background:currentColor; flex:none;}
   .m-copy{background:var(--walnut); color:var(--gold);}
   .m-call{background:linear-gradient(135deg,var(--gold),var(--amber)); color:var(--walnut);}
   .m-close{background:#eee; color:#555; width:100%; margin-top:10px;}
@@ -548,6 +554,7 @@
 <div class="modal-bg" id="modalBg">
   <div class="modal">
     <h3 data-i18n="modalTitle">สรุปรายการของคุณ</h3>
+    <div id="sendStatus" class="send-status"></div>
     <p data-i18n="modalDesc">คัดลอกข้อความนี้ส่งทาง LINE ให้ผู้จัดการ หรือกดโทรได้ทันที</p>
     <textarea id="summaryText" readonly></textarea>
     <div class="modal-actions">
@@ -649,7 +656,10 @@ const UI = {
   timeEvening:{th:"ช่วงเย็น 16:00–19:00",en:"Evening 16:00–19:00",zh:"傍晚 16:00–19:00"},
   submitQuoteBtn:{th:"ขอใบเสนอราคา / ให้เจ้าหน้าที่ติดต่อกลับ",en:"Request a Quote / Call Me Back",zh:"申请报价 / 请工作人员回电"},
   modalTitle:{th:"สรุปรายการของคุณ",en:"Your Order Summary",zh:"您的订单摘要"},
-  modalDesc:{th:"คัดลอกข้อความนี้ส่งทาง LINE ให้ผู้จัดการ หรือกดโทรได้ทันที",en:"Copy this message to send via LINE, or call us directly.",zh:"复制此消息通过LINE发送给店长，或直接致电。"},
+  modalDesc:{th:"ระบบส่งข้อมูลนี้เข้าฐานข้อมูลร้านให้อัตโนมัติ และแนะนำให้คัดลอกข้อความนี้ส่งทาง LINE ให้ผู้จัดการเพิ่มเติม หรือกดโทรได้ทันที",en:"This is sent to our system automatically — you can also copy this message to send via LINE, or call us directly.",zh:"系统会自动发送此信息，您也可以复制此消息通过LINE发送给店长，或直接致电。"},
+  sendPending:{th:"กำลังส่งข้อมูลไปที่ร้าน...",en:"Sending to the shop...",zh:"正在发送至店铺..."},
+  sendOk:{th:"ส่งข้อมูลถึงร้านเรียบร้อยแล้ว",en:"Sent to the shop successfully.",zh:"已成功发送至店铺。"},
+  sendFail:{th:"ส่งอัตโนมัติไม่สำเร็จ กรุณาคัดลอกข้อความส่งเอง",en:"Automatic send failed — please copy the message and send it yourself.",zh:"自动发送失败，请复制信息并自行发送。"},
   modalCopy:{th:"คัดลอกข้อความ",en:"Copy Message",zh:"复制文字"},
   modalCall:{th:"โทรเลย",en:"Call Now",zh:"立即致电"},
   modalClose:{th:"ปิดหน้าต่าง",en:"Close",zh:"关闭窗口"},
@@ -1090,7 +1100,7 @@ document.getElementById('budgetInput').addEventListener('keypress', e=>{ if(e.ke
       (ends in /exec).
    6. Paste that URL into SHEET_WEBAPP_URL below, between the quotes.
    Leave it as "" to disable sheet-saving (form still works via Copy/Call). */
-const SHEET_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbwzGnLtcBcdjTw96JaIy6z80hM5VAqmWDNyMytrUmu-pnhB76tQtQifAqTBRgBAdXU/exec";
+const SHEET_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbwHp2IiYQGM1LCWRiT66rRyFSuGgYPE8jx1Z5kpsEmsPLnT2J4RparjekBWX3QY3J4/exec";
 
 let cart = [];
 function addProductToCart(code){
@@ -1150,7 +1160,10 @@ function submitQuote(e){
   document.getElementById('modalBg').classList.add('open');
   closeDrawer();
 
+  const statusEl = document.getElementById('sendStatus');
   if(SHEET_WEBAPP_URL){
+    statusEl.className = 'send-status show pending';
+    statusEl.innerHTML = `<span class="dot"></span> ${t('sendPending')}`;
     const itemsText = cart.map(c=>`${c.name} (${c.price?fmtBaht(c.price):t('askQuoteAsk')})`).join(' | ');
     const payload = new URLSearchParams({
       timestamp: new Date().toLocaleString('th-TH'),
@@ -1160,7 +1173,17 @@ function submitQuote(e){
       lang: currentLang
     });
     fetch(SHEET_WEBAPP_URL, { method:'POST', mode:'no-cors', body: payload })
-      .catch(()=>{ /* silent fail — customer still has Copy/Call as backup */ });
+      .then(()=>{
+        statusEl.className = 'send-status show ok';
+        statusEl.innerHTML = `<span class="dot"></span> ${t('sendOk')}`;
+      })
+      .catch(()=>{
+        statusEl.className = 'send-status show fail';
+        statusEl.innerHTML = `<span class="dot"></span> ${t('sendFail')}`;
+      });
+  } else {
+    statusEl.className = 'send-status';
+    statusEl.innerHTML = '';
   }
 }
 function copySummary(){
