@@ -63,6 +63,13 @@
     display:flex; align-items:center; gap:6px;
     font-size:.8rem; color:var(--cream); opacity:.9; padding:8px 12px; border:1px solid rgba(253,251,247,.25); border-radius:999px; white-space:nowrap;
   }
+  .social-links{display:flex; align-items:center; gap:6px;}
+  .social-links a{
+    width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+    background:rgba(253,251,247,.12); color:var(--cream); font-size:.6rem; font-weight:800;
+    border:1px solid rgba(253,251,247,.25); letter-spacing:.2px;
+  }
+  .social-links a:hover{background:var(--gold); color:var(--walnut);}
   .cart-btn{
     position:relative; background:linear-gradient(135deg,var(--gold),var(--amber));
     color:var(--walnut); border:none; padding:9px 16px; border-radius:999px;
@@ -77,7 +84,13 @@
     .tel-btn .tel-num{display:none;}
     .tel-btn{padding:9px 11px;}
     .brand-text span{display:none;}
+    .social-links{display:none;}
   }
+
+  /* ---------- footer social links ---------- */
+  .foot-social{display:flex; flex-wrap:wrap; gap:10px; margin-top:6px;}
+  .foot-social a{font-size:.84rem; opacity:.9; display:inline-flex; align-items:center; gap:6px;}
+  .foot-social a:hover{opacity:1; text-decoration:underline;}
 
   /* ---------- hero ---------- */
   .hero{
@@ -316,6 +329,20 @@
     .chip-toggle{padding:13px; min-height:44px; display:flex; align-items:center; justify-content:center;}
     .cart-btn{padding:11px 18px; min-height:44px;}
   }
+
+  /* ---------- mobile readability: bigger min font size + looser line-height so Thai text doesn't wrap awkwardly ---------- */
+  @media(max-width:640px){
+    body{line-height:1.85;}
+    h1,h2,h3,.display{line-height:1.55;}
+    .hero p{font-size:1rem; line-height:1.9;}
+    .section-head p{line-height:1.85;}
+    .eyebrow2{font-size:.8rem !important;}
+    .card-price small{font-size:.78rem !important;}
+    .budget-item .bi-price{font-size:.95rem !important;}
+    .review-card figcaption{font-size:.92rem; line-height:1.8;}
+    .foot-bottom, footer p, footer a{font-size:.88rem !important; line-height:1.9;}
+    .card-body{line-height:1.75;}
+  }
   .review-card{background:#fff; border:1px solid #f0dca8; border-radius:28px; overflow:hidden; box-shadow:0 10px 26px -18px rgba(30,46,40,.22);}
   .review-card img{width:100%; max-height:420px; object-fit:contain; background:linear-gradient(135deg,#f3e6cf,#e8d3a8); display:block;}
   .review-card figcaption{padding:12px 14px 16px; font-size:.8rem; color:var(--walnut); line-height:1.6; font-style:italic;}
@@ -385,6 +412,11 @@
         <button class="lang-btn active" id="langBtn-th" onclick="setLang('th')">TH</button>
         <button class="lang-btn" id="langBtn-en" onclick="setLang('en')">EN</button>
         <button class="lang-btn" id="langBtn-zh" onclick="setLang('zh')">中文</button>
+      </div>
+      <div class="social-links">
+        <a href="https://www.facebook.com/Woodstock789" target="_blank" rel="noopener" aria-label="Facebook">FB</a>
+        <a href="https://line.me/R/ti/p/@079lmply" target="_blank" rel="noopener" aria-label="LINE">LINE</a>
+        <a href="https://www.tiktok.com/@woodstockshop" target="_blank" rel="noopener" aria-label="TikTok">TT</a>
       </div>
       <a class="tel-btn" href="tel:0864415399">📞 <span class="tel-num">086-441-5399</span></a>
       <button class="cart-btn" onclick="openDrawer()"><span data-i18n="cartBtn">รายการของฉัน</span> <span class="cart-count" id="cartCount">0</span></button>
@@ -721,7 +753,12 @@
       <h3 data-i18n="footContact">ติดต่อเรา</h3>
       <p><a href="tel:0864415399">โทร/LINE: 086-441-5399</a></p>
       <p data-i18n="footShip">ขายปลีก-ขายส่ง ทั่วประเทศไทย</p>
-      <p><a href="https://woodstockcreationfurniture.lnwshop.com/" target="_blank" rel="noopener">ช้อปออนไลน์ที่ LnwShop &rarr;</a></p>
+      <div class="foot-social">
+        <a href="https://www.facebook.com/Woodstock789" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://line.me/R/ti/p/@079lmply" target="_blank" rel="noopener">LINE @079lmply</a>
+        <a href="https://www.tiktok.com/@woodstockshop" target="_blank" rel="noopener">TikTok @woodstockshop</a>
+        <a href="https://woodstockcreationfurniture.lnwshop.com/" target="_blank" rel="noopener">ช้อปออนไลน์ที่ LnwShop &rarr;</a>
+      </div>
     </div>
     <div>
       <h3 data-i18n="footNoteTitle">หมายเหตุ</h3>
