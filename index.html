@@ -443,7 +443,7 @@
         <div class="wood-cards">
           <div class="wood-card active" data-wood="teak" onclick="selectWood('teak')">
             <div class="wood-swatch teak"></div>
-            <b data-i18n="woodTeakName">ไม้สักเกรด AAA</b>
+            <b data-i18n="woodTeakName">ไม้สัก</b>
             <small data-i18n="woodTeakDesc">ไม้สัก (ประสานกันให้ได้แผ่นเดียว) หนา ~1 นิ้ว (2.5 ซม.)</small>
           </div>
           <div class="wood-card" data-wood="byron" onclick="selectWood('byron')">
@@ -770,7 +770,7 @@ const UI = {
   estStep2:{th:"2. ความกว้าง (ซม.)",en:"2. Width (cm)",zh:"2. 宽度（厘米）"},
   estStep3:{th:"3. ความยาว (ซม.)",en:"3. Length (cm)",zh:"3. 长度（厘米）"},
   estStep4:{th:"4. รูปแบบสินค้า",en:"4. Product type",zh:"4. 产品形式"},
-  woodTeakName:{th:"ไม้สักเกรด AAA",en:"AAA-Grade Teak",zh:"AAA级柚木"},
+  woodTeakName:{th:"ไม้สัก",en:"Teak",zh:"柚木"},
   woodTeakDesc:{th:"ไม้สัก (ประสานกันให้ได้แผ่นเดียว) หนา ~1 นิ้ว (2.5 ซม.)",en:"Teak, edge-glued to form one seamless-look slab, ~1 in. thick (2.5 cm)",zh:"柚木（拼接成一整块外观），厚约1英寸（2.5厘米）"},
   woodByronName:{th:"ไม้จามจุรีขอบธรรมชาติ",en:"Rain Tree Live-Edge",zh:"雨豆木天然边"},
   woodByronDesc:{th:"ขาไบรอน หนา ~2 นิ้ว (5 ซม.)",en:"Byron-style legs, ~2 in. thick (5 cm)",zh:"拜伦式桌腿，厚约2英寸（5厘米）"},
@@ -1082,8 +1082,8 @@ const PRODUCTS = [
   {code:"T005", cat:"table", price:3500, name:{th:"โต๊ะไม้ประสาน 80×80×75 ซม.",en:"Joined-Wood Table, 80×80×75 cm",zh:"拼接木桌，80×80×75厘米"}, note:{th:"ไม้จามจุรี 2,700.-",en:"Rain Tree version: ฿2,700",zh:"雨豆木款：2,700泰铢"}},
   {code:"T006", cat:"table", price:21000, name:{th:"โต๊ะจามจุรีแผ่นเดียว ขาไขว้",en:"Rain Tree Single-Slab Table, Cross Legs",zh:"雨豆木整板桌，交叉桌腿"}, note:{th:"90×250 ซม. หนา 2 นิ้ว / หนา 4 นิ้ว 33,000.-",en:"90×250 cm, 2 in. thick / 4 in. thick ฿33,000",zh:"90×250厘米，厚2英寸 / 厚4英寸33,000泰铢"}},
   {code:"C006", cat:"table", price:5500, name:{th:"โต๊ะบาร์จามจุรี",en:"Rain Tree Bar Table",zh:"雨豆木吧台桌"}, note:{th:"45×195 ซม.",en:"45×195 cm",zh:"45×195厘米"}},
-  {code:"C007", cat:"table", price:18000, name:{th:"โต๊ะไม้สักเก่า เกรด AA",en:"Reclaimed Teak Table, Grade AA",zh:"老柚木桌，AA级"}, note:{th:"95×200 ซม. หนา 1 นิ้ว",en:"95×200 cm, 1 in. thick",zh:"95×200厘米，厚1英寸"}},
-  {code:"C008", cat:"table", price:59000, name:{th:"โต๊ะไม้สักเก่า เกรด AA มีลิ้นชัก",en:"Reclaimed Teak Table with Drawer, Grade AA",zh:"老柚木带抽屉桌，AA级"}, note:{th:"100×350×75 ซม. มีลิ้นชัก (ลดจาก 75,000.-) รวมส่ง กทม.",en:"100×350×75 cm, with drawer (down from ฿75,000), incl. delivery in Bangkok",zh:"100×350×75厘米，带抽屉（原价75,000泰铢），含曼谷市内配送"}},
+  {code:"C007", cat:"table", price:18000, name:{th:"โต๊ะไม้สักเก่า",en:"Reclaimed Teak Table",zh:"老柚木桌"}, note:{th:"95×200 ซม. หนา 1 นิ้ว",en:"95×200 cm, 1 in. thick",zh:"95×200厘米，厚1英寸"}},
+  {code:"C008", cat:"table", price:59000, name:{th:"โต๊ะไม้สักเก่า มีลิ้นชัก",en:"Reclaimed Teak Table with Drawer",zh:"老柚木带抽屉桌"}, note:{th:"100×350×75 ซม. มีลิ้นชัก (ลดจาก 75,000.-) รวมส่ง กทม.",en:"100×350×75 cm, with drawer (down from ฿75,000), incl. delivery in Bangkok",zh:"100×350×75厘米，带抽屉（原价75,000泰铢），含曼谷市内配送"}},
   {code:"C009", cat:"table", price:14500, name:{th:"โต๊ะจามจุรีแผ่นเดียว ทรงวงรี",en:"Rain Tree Single-Slab Oval Table",zh:"雨豆木整板椭圆桌"}, note:{th:"ยาว 200×90 ซม. หนา 2 นิ้ว (ลดจาก 25,000.-) ค่าขนส่งเอกชนตามจริง",en:"200×90 cm, 2 in. thick (down from ฿25,000), private courier at actual cost",zh:"200×90厘米，厚2英寸（原价25,000泰铢），运费按实际物流费用计算"}},
   {code:"C016", cat:"table", price:6500, name:{th:"โต๊ะกลางไม้จามจุรี ทรงสูง",en:"Rain Tree Coffee Table, Tall",zh:"雨豆木茶几，高款"}, note:{th:"เส้นผ่านศก. 70 ซม.",en:"Diameter 70 cm",zh:"直径70厘米"}},
   {code:"C017", cat:"table", price:3500, name:{th:"โต๊ะกลางไม้จามจุรี ทรงเตี้ย",en:"Rain Tree Coffee Table, Low",zh:"雨豆木茶几，矮款"}, note:{th:"เส้นผ่านศก. 50 ซม.",en:"Diameter 50 cm",zh:"直径50厘米"}},
@@ -1411,7 +1411,7 @@ document.getElementById('budgetInput').addEventListener('keypress', e=>{ if(e.ke
       (ends in /exec).
    6. Paste that URL into SHEET_WEBAPP_URL below, between the quotes.
    Leave it as "" to disable sheet-saving (form still works via Copy/Call). */
-const SHEET_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbyjuNCINTv8xaPb9NkmERmaqZ-k_dvA95nGexEkzJTtF2fCKSzs90LEEtcWsGP1MI5M3Q/exec";
+const SHEET_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbxD-ARUm4gJmdDpgu2LisE2WMVBoFTars_dRu6Qs1Zz2-1mSBMilD1t8WWjLbeYXPEo/exec";
 
 /* ================= CUSTOM ORDER FORM -> MAKE.COM/ZAPIER WEBHOOK =================
    This powers the "รับทำตามแบบ" (custom order) form: name/phone/Line/description/
