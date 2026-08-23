@@ -5,16 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Woodstock Creation Furniture — ไม้จริงแท้จากลำปาง</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Noto+Serif+Thai:wght@500;600;700&family=Noto+Sans+Thai:wght@400;500;600;700&family=Noto+Serif+SC:wght@600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&family=Noto+Serif+Thai:wght@500;600;700&family=Noto+Sans+Thai:wght@400;500;600;700&family=Noto+Serif+SC:wght@600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --walnut:#2C1D11;
-    --gold:#D4AF37;
-    --amber:#C5832B;
-    --cream:#FDFBF7;
-    --charcoal:#1E2022;
-    --line:rgba(212,175,55,0.28);
-    --shadow:0 20px 50px -20px rgba(44,29,17,0.35);
+    --walnut:#1E2E28;
+    --gold:#C27D38;
+    --amber:#B06D2B;
+    --cream:#F9F6F0;
+    --charcoal:#2B2B2B;
+    --line:rgba(194,125,56,0.28);
+    --shadow:0 25px 60px -25px rgba(30,46,40,0.28);
   }
   *{box-sizing:border-box; margin:0; padding:0;}
   html{scroll-behavior:smooth;}
@@ -28,9 +28,10 @@
     overflow-wrap:break-word;
   }
   h1,h2,h3,.display{
-    font-family:'Noto Serif Thai','Noto Serif SC','Cormorant Garamond',serif;
+    font-family:'Noto Serif Thai','Noto Serif SC','Playfair Display',serif;
     color:var(--walnut);
     line-height:1.4;
+    font-weight:700;
   }
   a{color:inherit; text-decoration:none;}
   img{max-width:100%; display:block;}
@@ -41,7 +42,7 @@
   /* ---------- header ---------- */
   header{
     position:sticky; top:0; z-index:50;
-    background:rgba(44,29,17,0.97);
+    background:rgba(30,46,40,0.97);
     backdrop-filter:blur(6px);
     color:var(--cream);
     border-bottom:1px solid var(--line);
@@ -109,6 +110,60 @@
     border:1px solid var(--line); padding:7px 14px; border-radius:999px;
   }
 
+  /* ---------- ornamental divider ---------- */
+  .ornament{display:flex; align-items:center; justify-content:center; gap:16px; margin:0 0 36px; color:var(--gold);}
+  .ornament::before, .ornament::after{content:""; height:1px; width:64px; background:var(--line);}
+  .ornament span{font-size:1.1rem;}
+
+  /* ---------- why-us feature row ---------- */
+  .why-us{background:var(--cream); padding:56px 20px 60px; text-align:center;}
+  .why-us .eyebrow2{display:block; margin-bottom:6px;}
+  .why-us h2{font-size:clamp(1.4rem,3vw,1.9rem); margin-bottom:36px;}
+  .why-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:22px; max-width:1000px; margin:0 auto;}
+  .why-card{background:#fff; border:1px solid #efe6d6; border-radius:26px; padding:30px 20px; box-shadow:var(--shadow);}
+  .why-icon{width:56px; height:56px; margin:0 auto 16px; border-radius:50%; background:linear-gradient(135deg,var(--gold),var(--amber)); display:flex; align-items:center; justify-content:center; font-size:1.5rem;}
+  .why-card h4{font-size:.98rem; color:var(--walnut); margin-bottom:6px; font-family:'Noto Serif Thai',serif;}
+  .why-card p{font-size:.8rem; color:#6b5c4a; line-height:1.6; margin:0;}
+  @media(max-width:820px){.why-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:480px){.why-grid{grid-template-columns:1fr;}}
+
+  /* ---------- SEO storytelling article ---------- */
+  .seo-article{background:#fff; padding:64px 20px;}
+  .seo-article .wrap{max-width:820px;}
+  .seo-article h2{text-align:center; font-size:clamp(1.4rem,3vw,2rem); margin-bottom:8px;}
+  .seo-article .seo-lead{text-align:center; color:#6b5c4a; font-size:.92rem; margin-bottom:40px;}
+  .seo-article h3{font-size:1.15rem; color:var(--walnut); margin:34px 0 12px; font-family:'Noto Serif Thai',serif;}
+  .seo-article p{font-size:.92rem; line-height:1.85; color:#4a3f33; margin:0 0 14px;}
+  .seo-article ul{margin:0 0 14px; padding-left:22px;}
+  .seo-article li{font-size:.92rem; line-height:1.8; color:#4a3f33; margin-bottom:4px;}
+
+  /* ---------- service area ---------- */
+  .service-area{background:var(--cream); padding:60px 20px;}
+  .service-area .wrap{max-width:820px; text-align:center;}
+  .service-area h2{font-size:clamp(1.3rem,3vw,1.8rem); margin-bottom:10px;}
+  .service-area .sa-desc{color:#6b5c4a; font-size:.9rem; margin-bottom:28px; line-height:1.7;}
+  .sa-regions{display:flex; flex-wrap:wrap; gap:10px; justify-content:center;}
+  .sa-regions span{
+    font-size:.8rem; color:var(--walnut); background:#fff; border:1px solid #efe6d6;
+    padding:8px 16px; border-radius:999px;
+  }
+
+  /* ---------- FAQ accordion ---------- */
+  .faq-section{background:#fff; padding:60px 20px 70px;}
+  .faq-section .wrap{max-width:760px;}
+  .faq-section h2{text-align:center; font-size:clamp(1.3rem,3vw,1.9rem); margin-bottom:36px;}
+  .faq-item{border-bottom:1px solid #efe6d6;}
+  .faq-q{
+    width:100%; text-align:left; background:none; border:none; cursor:pointer;
+    padding:18px 4px; font-size:.94rem; font-weight:600; color:var(--walnut);
+    display:flex; justify-content:space-between; align-items:center; gap:12px; font-family:inherit;
+  }
+  .faq-q .faq-plus{color:var(--gold); font-size:1.2rem; transition:transform .25s; flex:none;}
+  .faq-item.open .faq-q .faq-plus{transform:rotate(45deg);}
+  .faq-a{max-height:0; overflow:hidden; transition:max-height .3s ease;}
+  .faq-a p{font-size:.86rem; color:#6b5c4a; line-height:1.75; padding:0 4px 18px;}
+  .faq-item.open .faq-a{max-height:400px;}
+
   /* ---------- founder trust ---------- */
   .founder-trust{background:#fff8ea; border-bottom:1px solid #f0dca8; padding:26px 20px;}
   .founder-wrap{display:flex; align-items:center; gap:20px; max-width:760px; margin:0 auto;}
@@ -117,6 +172,23 @@
   .founder-text h3{font-size:.98rem; color:var(--walnut); margin-bottom:4px; font-family:'Noto Serif Thai',serif;}
   .founder-text p{font-size:.8rem; color:#6b5c4a; line-height:1.6; margin:0;}
   @media(max-width:560px){.founder-wrap{flex-direction:column; text-align:center;}}
+
+  /* ---------- custom order form ---------- */
+  .custom-order{background:var(--cream);}
+  .custom-form{max-width:760px; margin:0 auto; background:#fff; border:1px solid #efe6d6; border-radius:28px; padding:32px; box-shadow:var(--shadow);}
+  .cf-grid{display:grid; grid-template-columns:1fr 1fr; gap:20px;}
+  .cf-field{display:flex; flex-direction:column; gap:6px;}
+  .cf-span2{grid-column:1/-1;}
+  .cf-field label{font-size:.82rem; font-weight:600; color:var(--walnut);}
+  .cf-field input, .cf-field textarea{
+    border:1px solid #e3d7bd; border-radius:14px; padding:11px 14px; font-size:.92rem;
+    font-family:inherit; color:var(--charcoal); background:var(--cream);
+  }
+  .cf-field input:focus, .cf-field textarea:focus{outline:2px solid var(--gold); outline-offset:1px;}
+  .cf-size-row{display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px;}
+  .custom-form .send-status{margin:18px 0 0;}
+  .custom-form > .est-add{width:100%; margin-top:18px;}
+  @media(max-width:640px){.cf-grid{grid-template-columns:1fr;} .custom-form{padding:24px 20px;}}
 
   /* ---------- section shell ---------- */
   section{padding:56px 20px;}
@@ -130,41 +202,41 @@
   .estimator::before{content:""; position:absolute; inset:0; background:radial-gradient(circle at 85% 10%, rgba(212,175,55,.10), transparent 45%);}
   .estimator .section-head h2,.estimator .section-head p{color:var(--cream);}
   .estimator .section-head p{opacity:.75;}
-  .est-card{position:relative; z-index:1; max-width:840px; margin:0 auto; background:var(--cream); border-radius:22px; padding:28px; box-shadow:var(--shadow);}
+  .est-card{position:relative; z-index:1; max-width:840px; margin:0 auto; background:var(--cream); border-radius:28px; padding:28px; box-shadow:var(--shadow);}
   .est-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
   @media(max-width:640px){.est-grid{grid-template-columns:1fr;}}
   .field label{display:block; font-size:.8rem; font-weight:700; color:var(--walnut); margin-bottom:7px;}
   select,input[type=text],input[type=tel],input[type=number]{
-    width:100%; padding:12px 14px; border-radius:12px; border:1.5px solid #e6ddcf; background:#fff;
+    width:100%; padding:12px 14px; border-radius:16px; border:1.5px solid #e6ddcf; background:#fff;
     font-size:.92rem; color:var(--charcoal);
   }
   select:focus,input:focus{outline:none; border-color:var(--gold);}
   .wood-cards{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:6px;}
-  .wood-card{border:2px solid #e6ddcf; border-radius:16px; padding:14px; cursor:pointer; background:#fff; transition:.15s;}
+  .wood-card{border:2px solid #e6ddcf; border-radius:20px; padding:14px; cursor:pointer; background:#fff; transition:.15s;}
   .wood-card.active{border-color:var(--gold); background:#fff9ec; box-shadow:0 6px 18px -8px rgba(212,175,55,.5);}
-  .wood-swatch{width:100%; height:46px; border-radius:10px; margin-bottom:10px;}
+  .wood-swatch{width:100%; height:46px; border-radius:14px; margin-bottom:10px;}
   .wood-swatch.teak{background:linear-gradient(135deg,#b0763c,#7a4e22);}
   .wood-swatch.byron{background:linear-gradient(135deg,#8a5a2e,#4a2f13);}
   .wood-card b{font-size:.86rem; color:var(--walnut); display:block; margin-bottom:2px;}
   .wood-card small{font-size:.74rem; color:#7a6a58;}
   .leg-toggle{display:flex; gap:10px; margin-top:6px;}
-  .chip-toggle{flex:1; text-align:center; padding:11px; border-radius:12px; border:1.5px solid #e6ddcf; cursor:pointer; font-size:.85rem; font-weight:600; color:var(--walnut); background:#fff;}
+  .chip-toggle{flex:1; text-align:center; padding:11px; border-radius:16px; border:1.5px solid #e6ddcf; cursor:pointer; font-size:.85rem; font-weight:600; color:var(--walnut); background:#fff;}
   .chip-toggle.active{background:var(--walnut); color:var(--gold); border-color:var(--walnut);}
-  .price-out{margin-top:22px; padding:20px; border-radius:16px; background:var(--walnut); color:var(--cream); text-align:center;}
+  .price-out{margin-top:22px; padding:20px; border-radius:20px; background:var(--walnut); color:var(--cream); text-align:center;}
   .price-out .p-label{font-size:.76rem; opacity:.72;}
   .price-out .p-value{font-family:'Noto Serif Thai',serif; font-size:2.1rem; color:var(--gold); font-weight:700; margin:6px 0;}
   .price-out .p-vat{font-size:.76rem; opacity:.68;}
-  .est-add{margin-top:16px; width:100%; padding:14px; border-radius:12px; border:none; cursor:pointer; background:linear-gradient(135deg,var(--gold),var(--amber)); color:var(--walnut); font-weight:700; font-size:.9rem;}
-  .disclaimer{margin-top:14px; padding:13px 15px; border-radius:12px; background:#fff6e0; border:1px solid #f0dca8; font-size:.78rem; color:#7a5c22; line-height:1.65;}
+  .est-add{margin-top:16px; width:100%; padding:14px; border-radius:16px; border:none; cursor:pointer; background:linear-gradient(135deg,var(--gold),var(--amber)); color:var(--walnut); font-weight:700; font-size:.9rem;}
+  .disclaimer{margin-top:14px; padding:13px 15px; border-radius:16px; background:#fff6e0; border:1px solid #f0dca8; font-size:.78rem; color:#7a5c22; line-height:1.65;}
 
   /* ---------- budget finder ---------- */
   .budget-section{background:#fff8ea;}
-  .budget-card{max-width:640px; margin:0 auto; background:#fff; border-radius:22px; padding:28px; box-shadow:var(--shadow); border:1px solid #f0dca8;}
+  .budget-card{max-width:640px; margin:0 auto; background:#fff; border-radius:28px; padding:28px; box-shadow:var(--shadow); border:1px solid #f0dca8;}
   .budget-input-row{display:flex; gap:10px; flex-wrap:wrap;}
   .budget-input-row input{flex:1; min-width:160px; font-size:1.1rem; font-weight:700; text-align:center; color:var(--walnut);}
-  .budget-go{background:var(--walnut); color:var(--gold); border:none; padding:0 22px; border-radius:12px; font-weight:700; cursor:pointer; font-size:.9rem;}
+  .budget-go{background:var(--walnut); color:var(--gold); border:none; padding:0 22px; border-radius:16px; font-weight:700; cursor:pointer; font-size:.9rem;}
   .budget-results{margin-top:20px; display:flex; flex-direction:column; gap:10px;}
-  .budget-item{display:flex; justify-content:space-between; align-items:center; gap:10px; background:var(--cream); border:1px solid #efe6d6; border-radius:12px; padding:12px 14px;}
+  .budget-item{display:flex; justify-content:space-between; align-items:center; gap:10px; background:var(--cream); border:1px solid #efe6d6; border-radius:16px; padding:12px 14px;}
   .budget-item-link{cursor:pointer; transition:.15s;}
   .budget-item-link:hover{border-color:var(--gold); background:#fff9ec; transform:translateY(-1px);}
   .card{transition:box-shadow .3s, transform .3s;}
@@ -178,7 +250,7 @@
   /* ---------- shop by need ---------- */
   .need-section{background:#fff;}
   .need-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:18px;}
-  .need-card{background:var(--cream); border:1px solid #efe6d6; border-radius:20px; padding:22px; cursor:pointer; transition:.15s; display:flex; flex-direction:column; gap:8px;}
+  .need-card{background:var(--cream); border:1px solid #efe6d6; border-radius:26px; padding:22px; cursor:pointer; transition:.15s; display:flex; flex-direction:column; gap:8px;}
   .need-card:hover{border-color:var(--gold); box-shadow:var(--shadow); transform:translateY(-2px);}
   .need-icon{font-size:1.7rem;}
   .need-card h3{font-size:1.02rem;}
@@ -191,7 +263,7 @@
   .filter-chip{padding:9px 17px; border-radius:999px; border:1.5px solid #e6ddcf; background:#fff; font-size:.83rem; font-weight:600; color:var(--walnut); cursor:pointer;}
   .filter-chip.active{background:var(--walnut); color:var(--gold); border-color:var(--walnut);}
   .grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:18px;}
-  .card{background:#fff; border-radius:18px; overflow:hidden; border:1px solid #efe6d6; box-shadow:0 10px 26px -18px rgba(44,29,17,.25); display:flex; flex-direction:column;}
+  .card{background:#fff; border-radius:28px; overflow:hidden; border:1px solid #efe6d6; box-shadow:0 10px 26px -18px rgba(30,46,40,.22); display:flex; flex-direction:column;}
   .card-media{height:140px; position:relative; background:linear-gradient(135deg,#c69a5a,#7a4e22); display:flex; align-items:center; justify-content:center; overflow:hidden;}
   .card-media img{width:100%; height:100%; object-fit:cover;}
   .card-media .code-badge{position:absolute; top:8px; left:8px; background:rgba(30,32,34,.72); color:var(--gold); font-size:.68rem; font-weight:700; padding:4px 9px; border-radius:999px;}
@@ -203,7 +275,7 @@
   .card-note{font-size:.8rem; color:#6b5c4a; flex:1; line-height:1.6;}
   .card-price{font-family:'Noto Serif Thai',serif; font-size:1.2rem; color:var(--amber); font-weight:700; margin-top:6px;}
   .card-price small{font-size:.7rem; color:#9a8a76; font-weight:400; font-family:'Noto Sans Thai',sans-serif;}
-  .card-add{margin-top:8px; padding:10px; border-radius:10px; border:1.5px solid var(--walnut); background:transparent; color:var(--walnut); font-weight:700; font-size:.83rem; cursor:pointer;}
+  .card-add{margin-top:8px; padding:10px; border-radius:14px; border:1.5px solid var(--walnut); background:transparent; color:var(--walnut); font-weight:700; font-size:.83rem; cursor:pointer;}
   .card-add:hover{background:var(--walnut); color:var(--gold);}
 
   /* ---------- wood knowledge ---------- */
@@ -212,12 +284,12 @@
   .wood-know .section-head p{opacity:.75;}
   .compare-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px; max-width:900px; margin:0 auto 34px;}
   @media(max-width:640px){.compare-grid{grid-template-columns:1fr;}}
-  .wood-profile{background:rgba(253,251,247,0.05); border:1px solid var(--line); border-radius:18px; padding:22px;}
-  .wood-profile .wp-swatch{width:100%; height:56px; border-radius:12px; margin-bottom:14px;}
+  .wood-profile{background:rgba(253,251,247,0.05); border:1px solid var(--line); border-radius:24px; padding:22px;}
+  .wood-profile .wp-swatch{width:100%; height:56px; border-radius:16px; margin-bottom:14px;}
   .wood-profile h3{color:var(--gold); font-size:1.08rem; margin-bottom:10px;}
   .wood-profile ul{padding-left:18px; font-size:.86rem; opacity:.88; line-height:1.85;}
   .care-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:16px; max-width:960px; margin:0 auto;}
-  .care-card{background:rgba(253,251,247,0.05); border:1px solid var(--line); border-radius:16px; padding:18px; text-align:center;}
+  .care-card{background:rgba(253,251,247,0.05); border:1px solid var(--line); border-radius:20px; padding:18px; text-align:center;}
   .care-card .ci-icon{font-size:1.6rem; margin-bottom:8px;}
   .care-card h4{color:var(--gold); font-size:.9rem; margin-bottom:6px; line-height:1.5;}
   .care-card p{font-size:.8rem; opacity:.82; line-height:1.6;}
@@ -228,7 +300,7 @@
   .reviews-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:14px; max-width:1100px; margin:0 auto;}
   @media(max-width:900px){.reviews-grid{grid-template-columns:repeat(2,1fr);}}
   @media(max-width:560px){.reviews-grid{grid-template-columns:1fr;}}
-  .review-card{background:#fff; border:1px solid #f0dca8; border-radius:16px; overflow:hidden; box-shadow:0 10px 26px -18px rgba(44,29,17,.25);}
+  .review-card{background:#fff; border:1px solid #f0dca8; border-radius:28px; overflow:hidden; box-shadow:0 10px 26px -18px rgba(30,46,40,.22);}
   .review-card img{width:100%; aspect-ratio:3/4; object-fit:cover; display:block;}
   .review-card figcaption{padding:12px 14px 16px; font-size:.8rem; color:var(--walnut); line-height:1.6; font-style:italic;}
 
@@ -263,17 +335,17 @@
   .drawer-foot{padding:16px 20px; border-top:1px solid #eee0cc; background:#fff;}
   .total-row.grand{display:flex; justify-content:space-between; font-size:1.1rem; font-weight:700; color:var(--walnut);}
   .lead-form{display:flex; flex-direction:column; gap:10px; margin-top:14px;}
-  .submit-quote{padding:14px; border-radius:12px; border:none; cursor:pointer; font-weight:700; font-size:.9rem; background:linear-gradient(135deg,var(--gold),var(--amber)); color:var(--walnut);}
+  .submit-quote{padding:14px; border-radius:16px; border:none; cursor:pointer; font-weight:700; font-size:.9rem; background:linear-gradient(135deg,var(--gold),var(--amber)); color:var(--walnut);}
 
   .modal-bg{position:fixed; inset:0; background:rgba(30,32,34,.6); z-index:110; display:none; align-items:center; justify-content:center; padding:20px;}
   .modal-bg.open{display:flex;}
-  .modal{background:#fff; border-radius:18px; max-width:440px; width:100%; padding:24px; max-height:85vh; overflow-y:auto;}
+  .modal{background:#fff; border-radius:24px; max-width:440px; width:100%; padding:24px; max-height:85vh; overflow-y:auto;}
   .modal h3{margin-bottom:10px;}
   .modal p{font-size:.84rem; color:#6b5c4a; line-height:1.6;}
-  .modal textarea{width:100%; min-height:180px; border:1.5px solid #e6ddcf; border-radius:10px; padding:12px; font-family:inherit; font-size:.83rem; color:#3a2f22; margin:10px 0;}
+  .modal textarea{width:100%; min-height:180px; border:1.5px solid #e6ddcf; border-radius:14px; padding:12px; font-family:inherit; font-size:.83rem; color:#3a2f22; margin:10px 0;}
   .modal-actions{display:flex; gap:10px; flex-wrap:wrap;}
-  .modal-actions a,.modal-actions button{flex:1; text-align:center; padding:12px; border-radius:10px; font-weight:700; font-size:.84rem; cursor:pointer; border:none;}
-  .send-status{display:flex; align-items:center; gap:8px; padding:10px 14px; border-radius:10px; font-size:.82rem; font-weight:700; margin:10px 0; display:none;}
+  .modal-actions a,.modal-actions button{flex:1; text-align:center; padding:12px; border-radius:14px; font-weight:700; font-size:.84rem; cursor:pointer; border:none;}
+  .send-status{display:flex; align-items:center; gap:8px; padding:10px 14px; border-radius:14px; font-size:.82rem; font-weight:700; margin:10px 0; display:none;}
   .send-status.show{display:flex;}
   .send-status.pending{background:#fff6e0; color:#7a5c22;}
   .send-status.ok{background:#e6f6ec; color:#1e7a45;}
@@ -306,18 +378,41 @@
 
 <section class="hero">
   <div class="wrap">
-    <span class="eyebrow" data-i18n="heroEyebrow">โรงงานไม้จริง อ.ห้างฉัตร จ.ลำปาง</span>
+    <span class="eyebrow" data-i18n="heroEyebrow">✦ โรงงานไม้จริง อ.ห้างฉัตร จ.ลำปาง ✦</span>
     <h1 data-i18n-html="heroTitle">ไม้จริงแท้ 100% จากภาคเหนือ<br>รังสรรค์เป็น <em>เฟอร์นิเจอร์</em> ที่ส่งต่อได้ถึงรุ่นลูก</h1>
     <p data-i18n="heroDesc">ผ่านการอบแห้งมาตรฐาน ผลิตเองทุกขั้นตอนโดยช่างฝีมือท้องถิ่น ขายปลีก-ขายส่ง ทำตามงบและแบบที่ลูกค้าต้องการได้</p>
     <div class="hero-ctas">
       <a href="#estimator" class="btn-gold" data-i18n="heroBtn1">คำนวณราคาไม้แผ่นเดียว</a>
       <a href="#catalog" class="btn-ghost" data-i18n="heroBtn2">ดูแคตตาล็อกสินค้า</a>
     </div>
-    <div class="trust">
-      <span data-i18n="trust1">🌳 ไม้แผ่นเดียวไร้รอยต่อ</span>
-      <span data-i18n="trust2">🏭 เยี่ยมชมโรงงานได้จริง</span>
-      <span data-i18n="trust3">🚚 จัดส่งทั่วประเทศไทย</span>
-      <span data-i18n="trust4">🎨 ปรับแบบ/สีตามต้องการ</span>
+  </div>
+</section>
+
+<section class="why-us">
+  <div class="wrap">
+    <span class="eyebrow2">WHY CHOOSE US</span>
+    <h2 data-i18n="whyTitle">ทำไมต้องเลือก Wood Stock</h2>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">🌳</div>
+        <h4 data-i18n="why1Title">ไม้แผ่นเดียวไร้รอยต่อ</h4>
+        <p data-i18n="why1Desc">ลายไม้ธรรมชาติที่ไม่ซ้ำใคร ไม่มีสองชิ้นที่เหมือนกันในโลก</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🏭</div>
+        <h4 data-i18n="why2Title">เยี่ยมชมโรงงานได้จริง</h4>
+        <p data-i18n="why2Desc">มั่นใจได้ในทุกขั้นตอนการผลิต ไม่ใช่แค่ภาพในแคตตาล็อก</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🚚</div>
+        <h4 data-i18n="why3Title">จัดส่งทั่วประเทศไทย</h4>
+        <p data-i18n="why3Desc">บรรจุอย่างพิถีพิถัน ดูแลถึงมือลูกค้าอย่างปลอดภัย</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🎨</div>
+        <h4 data-i18n="why4Title">ปรับแบบ/สีได้ตามต้องการ</h4>
+        <p data-i18n="why4Desc">ออกแบบเฟอร์นิเจอร์ให้เข้ากับสไตล์บ้านของคุณโดยเฉพาะ</p>
+      </div>
     </div>
   </div>
 </section>
@@ -349,7 +444,7 @@
           <div class="wood-card active" data-wood="teak" onclick="selectWood('teak')">
             <div class="wood-swatch teak"></div>
             <b data-i18n="woodTeakName">ไม้สักเกรด AAA</b>
-            <small data-i18n="woodTeakDesc">แผ่นเดียว หนา ~1 นิ้ว (2.5 ซม.)</small>
+            <small data-i18n="woodTeakDesc">ไม้สัก (ประสานกันให้ได้แผ่นเดียว) หนา ~1 นิ้ว (2.5 ซม.)</small>
           </div>
           <div class="wood-card" data-wood="byron" onclick="selectWood('byron')">
             <div class="wood-swatch byron"></div>
@@ -383,6 +478,54 @@
       <div class="disclaimer" data-i18n="estDisclaimer">⚠️ ตัวเลขนี้เป็นราคาประมาณการเบื้องต้นเท่านั้น สำหรับให้ลูกค้าคำนวณงบคร่าวๆ ก่อนตัดสินใจ ราคาจริงอาจเปลี่ยนแปลงตามลายไม้ ปม รอยตำหนิ และขนาดแผ่นไม้ที่มีอยู่จริง ณ วันสั่งซื้อ — ทางร้านจะยืนยันราคาที่แน่นอนอีกครั้งหลังตรวจสอบหน้างานจริง</div>
       <button class="est-add" onclick="addEstimateToCart()" data-i18n="estAddBtn">+ เพิ่มรายการนี้เข้าใบขอราคา</button>
     </div>
+  </div>
+</section>
+
+<section class="custom-order" id="custom-order">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow2">CUSTOM ORDER</div>
+      <h2 data-i18n="customTitle">รับทำตามแบบที่คุณต้องการ</h2>
+      <p data-i18n="customDesc">ส่งรายละเอียดหรือรูปภาพแบบสินค้าที่ต้องการมาให้เรา ระบุขนาดที่ต้องการ ทางร้านจะประเมินราคาและติดต่อกลับให้เร็วที่สุด</p>
+    </div>
+    <form class="custom-form" id="customForm" onsubmit="submitCustomOrder(event)">
+      <div class="cf-grid">
+        <div class="cf-field">
+          <label data-i18n="phName">ชื่อ-นามสกุล</label>
+          <input type="text" id="cfName" required>
+        </div>
+        <div class="cf-field">
+          <label data-i18n="phPhone">เบอร์โทร</label>
+          <input type="tel" id="cfPhone" required>
+        </div>
+        <div class="cf-field">
+          <label data-i18n="phLine">Line ID (ถ้ามี)</label>
+          <input type="text" id="cfLine">
+        </div>
+        <div class="cf-field cf-span2">
+          <label data-i18n="customDescLabel">รายละเอียดสินค้าที่ต้องการ</label>
+          <textarea id="cfDetail" rows="3" required data-i18n-placeholder="customDescPh" placeholder="เช่น โต๊ะอาหาร 6 ที่นั่ง สไตล์มินิมอล สีน้ำตาลเข้ม"></textarea>
+        </div>
+        <div class="cf-field">
+          <label data-i18n="customSizeLabel">ขนาดที่ต้องการ (กว้าง×ยาว×สูง ซม.)</label>
+          <div class="cf-size-row">
+            <input type="number" id="cfW" placeholder="กว้าง" min="0">
+            <input type="number" id="cfL" placeholder="ยาว" min="0">
+            <input type="number" id="cfH" placeholder="สูง" min="0">
+          </div>
+        </div>
+        <div class="cf-field">
+          <label data-i18n="customBudgetLabel">งบประมาณโดยประมาณ (บาท)</label>
+          <input type="number" id="cfBudget" min="0" data-i18n-placeholder="customBudgetPh" placeholder="ไม่ระบุก็ได้">
+        </div>
+        <div class="cf-field cf-span2">
+          <label data-i18n="customFileLabel">แนบรูปภาพแบบ/แรงบันดาลใจ (แนบได้หลายรูป)</label>
+          <input type="file" id="cfFiles" accept="image/*" multiple>
+        </div>
+      </div>
+      <div id="customStatus" class="send-status"></div>
+      <button type="submit" class="est-add" data-i18n="customSubmitBtn">ส่งรายละเอียดให้เราประเมินราคา</button>
+    </form>
   </div>
 </section>
 
@@ -451,6 +594,12 @@
   </div>
 </section>
 
+<section class="seo-article">
+  <div class="wrap" id="seoArticleBody"></div>
+</section>
+
+<div class="ornament" style="margin-top:0; padding-top:40px;"><span>❦</span></div>
+
 <section class="reviews-section" id="reviews">
   <div class="wrap">
     <div class="section-head">
@@ -502,6 +651,25 @@
       <h2 data-i18n="processTitle">ขั้นตอนการสั่งสินค้า</h2>
     </div>
     <div class="steps" id="stepsGrid"></div>
+  </div>
+</section>
+
+<section class="service-area">
+  <div class="wrap">
+    <span class="eyebrow2">DELIVERY AREA</span>
+    <h2 data-i18n="saTitle">พื้นที่จัดส่ง — ทั่วประเทศไทย</h2>
+    <p class="sa-desc" data-i18n="saDesc">โรงงานตั้งอยู่ที่ อ.ห้างฉัตร จ.ลำปาง จัดส่งเฟอร์นิเจอร์ไม้จริงถึงหน้าบ้านลูกค้าทั่วประเทศ คิดค่าขนส่งตามระยะทางจริง ลูกค้าในภาคเหนือสามารถนัดรับสินค้าที่โรงงานเองได้เช่นกัน</p>
+    <div class="sa-regions" id="saRegions"></div>
+  </div>
+</section>
+
+<section class="faq-section">
+  <div class="wrap">
+    <div class="section-head" style="text-align:center;">
+      <div class="eyebrow2">FAQ</div>
+      <h2 data-i18n="faqTitle">คำถามที่พบบ่อย</h2>
+    </div>
+    <div id="faqList"></div>
   </div>
 </section>
 
@@ -603,7 +771,7 @@ const UI = {
   estStep3:{th:"3. ความยาว (ซม.)",en:"3. Length (cm)",zh:"3. 长度（厘米）"},
   estStep4:{th:"4. รูปแบบสินค้า",en:"4. Product type",zh:"4. 产品形式"},
   woodTeakName:{th:"ไม้สักเกรด AAA",en:"AAA-Grade Teak",zh:"AAA级柚木"},
-  woodTeakDesc:{th:"แผ่นเดียว หนา ~1 นิ้ว (2.5 ซม.)",en:"Single slab, ~1 in. thick (2.5 cm)",zh:"整块木板，厚约1英寸（2.5厘米）"},
+  woodTeakDesc:{th:"ไม้สัก (ประสานกันให้ได้แผ่นเดียว) หนา ~1 นิ้ว (2.5 ซม.)",en:"Teak, edge-glued to form one seamless-look slab, ~1 in. thick (2.5 cm)",zh:"柚木（拼接成一整块外观），厚约1英寸（2.5厘米）"},
   woodByronName:{th:"ไม้จามจุรีขอบธรรมชาติ",en:"Rain Tree Live-Edge",zh:"雨豆木天然边"},
   woodByronDesc:{th:"ขาไบรอน หนา ~2 นิ้ว (5 ซม.)",en:"Byron-style legs, ~2 in. thick (5 cm)",zh:"拜伦式桌腿，厚约2英寸（5厘米）"},
   legOff:{th:"แผ่นไม้อย่างเดียว",en:"Slab Only",zh:"仅木板"},
@@ -614,6 +782,31 @@ const UI = {
     en:"⚠️ This is a rough preliminary estimate only, meant to help you plan a budget. The final price may vary based on grain, knots, blemishes, and the actual slab available on order day — we will confirm the exact price after inspecting the material.",
     zh:"⚠️ 此价格仅为初步粗估，供您预估预算参考。实际价格可能因木纹、木节、瑕疵及下单当天实际库存木板尺寸而有所不同——我们将在确认实际木料后再提供正式报价。"},
   estAddBtn:{th:"+ เพิ่มรายการนี้เข้าใบขอราคา",en:"+ Add to Quote Request",zh:"+ 加入报价清单"},
+  whyTitle:{th:"ทำไมต้องเลือก Wood Stock",en:"Why Choose Wood Stock",zh:"为什么选择 Wood Stock"},
+  why1Title:{th:"ไม้แผ่นเดียวไร้รอยต่อ",en:"Seamless Single-Slab Wood",zh:"无拼接整板木材"},
+  why1Desc:{th:"ลายไม้ธรรมชาติที่ไม่ซ้ำใคร ไม่มีสองชิ้นที่เหมือนกันในโลก",en:"Unique natural grain — no two pieces are ever alike.",zh:"天然纹理独一无二，世上没有两件完全相同。"},
+  why2Title:{th:"เยี่ยมชมโรงงานได้จริง",en:"Visit Our Real Factory",zh:"欢迎实地参观工厂"},
+  why2Desc:{th:"มั่นใจได้ในทุกขั้นตอนการผลิต ไม่ใช่แค่ภาพในแคตตาล็อก",en:"See every production step yourself — not just catalog photos.",zh:"亲眼见证每道生产工序，不只是目录照片。"},
+  why3Title:{th:"จัดส่งทั่วประเทศไทย",en:"Nationwide Delivery",zh:"全泰国配送"},
+  why3Desc:{th:"บรรจุอย่างพิถีพิถัน ดูแลถึงมือลูกค้าอย่างปลอดภัย",en:"Carefully packed and delivered safely to your door.",zh:"细心包装，安全送达您手中。"},
+  why4Title:{th:"ปรับแบบ/สีได้ตามต้องการ",en:"Customizable Design & Color",zh:"可定制款式与颜色"},
+  why4Desc:{th:"ออกแบบเฟอร์นิเจอร์ให้เข้ากับสไตล์บ้านของคุณโดยเฉพาะ",en:"Furniture designed to match your home's exact style.",zh:"根据您家的风格量身设计家具。"},
+  saTitle:{th:"พื้นที่จัดส่ง — ทั่วประเทศไทย",en:"Delivery Area — Nationwide Thailand",zh:"配送范围 — 泰国全境"},
+  saDesc:{th:"โรงงานตั้งอยู่ที่ อ.ห้างฉัตร จ.ลำปาง จัดส่งเฟอร์นิเจอร์ไม้จริงถึงหน้าบ้านลูกค้าทั่วประเทศ คิดค่าขนส่งตามระยะทางจริง ลูกค้าในภาคเหนือสามารถนัดรับสินค้าที่โรงงานเองได้เช่นกัน",
+    en:"Our factory is in Hang Chat, Lampang. We deliver solid wood furniture nationwide, with shipping charged by actual distance. Northern Thailand customers may also arrange factory pickup.",
+    zh:"工厂位于南邦府杭猜县，实木家具配送至泰国全境，运费按实际距离计算。泰北客户也可预约到工厂自取。"},
+  faqTitle:{th:"คำถามที่พบบ่อย",en:"Frequently Asked Questions",zh:"常见问题"},
+  customTitle:{th:"รับทำตามแบบที่คุณต้องการ",en:"Custom Orders — Made to Your Design",zh:"定制订单 — 按您的设计制作"},
+  customDesc:{th:"ส่งรายละเอียดหรือรูปภาพแบบสินค้าที่ต้องการมาให้เรา ระบุขนาดที่ต้องการ ทางร้านจะประเมินราคาและติดต่อกลับให้เร็วที่สุด",en:"Send us your reference details or photos with the size you want, and we'll estimate a price and get back to you quickly.",zh:"发送您想要的产品细节或参考图片，注明尺寸，我们会为您估价并尽快回复。"},
+  customDescLabel:{th:"รายละเอียดสินค้าที่ต้องการ",en:"Product details",zh:"产品详情"},
+  customDescPh:{th:"เช่น โต๊ะอาหาร 6 ที่นั่ง สไตล์มินิมอล สีน้ำตาลเข้ม",en:"e.g. 6-seat dining table, minimalist style, dark brown",zh:"例如：6人座餐桌，简约风格，深棕色"},
+  customSizeLabel:{th:"ขนาดที่ต้องการ (กว้าง×ยาว×สูง ซม.)",en:"Desired size (W×L×H cm)",zh:"所需尺寸（宽×长×高 厘米）"},
+  customBudgetLabel:{th:"งบประมาณโดยประมาณ (บาท)",en:"Approximate budget (THB)",zh:"预算（泰铢）"},
+  customBudgetPh:{th:"ไม่ระบุก็ได้",en:"Optional",zh:"可不填"},
+  customFileLabel:{th:"แนบรูปภาพแบบ/แรงบันดาลใจ (แนบได้หลายรูป)",en:"Attach reference/inspiration photos (multiple allowed)",zh:"上传参考图片（可多张）"},
+  customSubmitBtn:{th:"ส่งรายละเอียดให้เราประเมินราคา",en:"Send for a Price Estimate",zh:"发送以获取估价"},
+  customSendOk:{th:"ส่งรายละเอียดถึงร้านเรียบร้อยแล้ว ทางร้านจะติดต่อกลับเร็วๆ นี้",en:"Sent successfully — we'll get back to you soon.",zh:"已成功发送，我们会尽快与您联系。"},
+  customNotConnected:{th:"ระบบรับแบบสั่งทำยังไม่เปิดใช้งาน กรุณาติดต่อร้านโดยตรงทางโทรศัพท์แทน",en:"The custom-order system isn't connected yet — please contact us by phone instead.",zh:"定制订单系统尚未连接，请直接致电联系我们。"},
   budgetTitle:{th:"มีงบเท่าไหร่ ให้เราช่วยหาให้",en:"Tell Us Your Budget, We'll Find It",zh:"告诉我们您的预算，让我们帮您找"},
   budgetDesc:{th:"ใส่งบประมาณคร่าวๆ ในใจ ระบบจะค้นหาสินค้าที่ใกล้เคียงกับงบของคุณที่สุดจากทั้งแคตตาล็อก",
     en:"Enter the rough budget you have in mind, and we'll find the closest matching products across the whole catalog.",
@@ -698,6 +891,9 @@ function setLang(lang){
   renderNeeds();
   renderGrid();
   renderWoodKnowledge();
+  renderSeoArticle();
+  renderServiceArea();
+  renderFaq();
   renderSteps();
   updateCart();
 }
@@ -1035,6 +1231,121 @@ function renderWoodKnowledge(){
   `).join('');
 }
 
+/* ---------- SEO storytelling article ---------- */
+const SEO_ARTICLE = {
+  th:{
+    title:"เรื่องราวไม้จริงจากภาคเหนือ สู่เฟอร์นิเจอร์ที่ส่งต่อได้ถึงรุ่นลูก",
+    lead:"จากไม้ท่อนในป่าปลูกภาคเหนือ ผ่านมือช่างฝีมือที่ อ.ห้างฉัตร จ.ลำปาง สู่เฟอร์นิเจอร์ที่อยู่ในบ้านคุณได้นานข้ามรุ่น",
+    h1:"ทำไมเฟอร์นิเจอร์ไม้จริงถึงต่างจากเฟอร์นิเจอร์ทั่วไป",
+    p1:"เฟอร์นิเจอร์ไม้จริงไม่ใช่แค่ของแต่งบ้าน แต่เป็นงานฝีมือที่มีเรื่องราวอยู่ในทุกลายไม้ ปมไม้ และร่องรอยตามธรรมชาติ ต่างจากเฟอร์นิเจอร์ไม้อัดหรือไม้ MDF ที่ผลิตจำนวนมากให้เหมือนกันทุกชิ้น เฟอร์นิเจอร์ไม้จริงแต่ละชิ้นจาก Wood Stock มีลายไม้เฉพาะตัว ไม่มีชิ้นไหนเหมือนกันแม้จะเป็นแบบเดียวกัน นี่คือเสน่ห์ที่ทำให้ไม้จริงยังเป็นที่ต้องการเสมอ ไม่ว่าเวลาจะผ่านไปนานแค่ไหน",
+    h2:"ไม้แผ่นเดียว vs ไม้ประสาน ต่างกันอย่างไร",
+    p2:"ลูกค้าหลายท่านสงสัยว่า \"ไม้แผ่นเดียว\" กับ \"ไม้ประสาน\" ต่างกันอย่างไร — ไม้จามจุรี (ไม้แคน/ไม้ก้ามปู) มักมีลำต้นใหญ่ สามารถเลื่อยเป็นแผ่นเดียวขนาดใหญ่ได้โดยไม่ต้องต่อ จึงเรียกว่าไม้แผ่นเดียวแท้ ในขณะที่ไม้สักแม้จะเป็นไม้เนื้อดีคุณภาพสูง แต่ด้วยขนาดลำต้นและกฎการปลูกที่ควบคุม จึงมักนำแผ่นไม้สักหลายแผ่นมาประสาน (ต่อ) กันด้วยเทคนิคเฉพาะให้ได้หน้ากว้างเท่าแผ่นเดียว ทั้งสองแบบมีความแข็งแรงคงทนไม่ต่างกัน เพียงแต่ลักษณะเนื้อไม้และราคาต่างกันตามความหายากของวัตถุดิบ",
+    h3:"จากไม้ท่อน สู่เฟอร์นิเจอร์ในบ้านคุณ",
+    p3:"ทุกขั้นตอนเกิดขึ้นที่โรงงานของเราเอง อ.ห้างฉัตร จ.ลำปาง ตั้งแต่:",
+    steps:["คัดเลือกไม้ท่อนจากแหล่งปลูกที่ถูกต้องตามกฎหมาย","เลื่อยแปรรูปและอบแห้งตามมาตรฐาน เพื่อลดการบิดงอในอนาคต","ขัด ตัด และขึ้นรูปตามแบบที่ลูกค้าต้องการ","พ่นสี เคลือบผิว ป้องกันมอดและความชื้น","ตรวจสอบคุณภาพและบรรจุอย่างพิถีพิถันก่อนจัดส่ง"],
+    p4:"ลูกค้าสามารถเดินทางมาเยี่ยมชมโรงงานได้จริง เพื่อดูขั้นตอนการผลิตด้วยตาตัวเอง — ไม่ใช่แค่ภาพสวยๆ ในแคตตาล็อกออนไลน์",
+    h4:"บริการสั่งทำพิเศษ ตามงบและแบบที่คุณต้องการ",
+    p5:"นอกจากสินค้าสำเร็จรูปกว่า 70 รายการในแคตตาล็อก Wood Stock ยังรับสั่งทำพิเศษตามแบบและงบประมาณของลูกค้า ไม่ว่าจะเป็นโต๊ะอาหารขนาดพิเศษ เตียงที่ต้องพอดีกับห้อง หรือเฟอร์นิเจอร์บิ้วอินสำหรับโครงการ ลูกค้าสามารถส่งรูปภาพแรงบันดาลใจหรือแบบที่ต้องการ พร้อมระบุขนาดและงบประมาณ ทางร้านจะประเมินราคาและให้คำแนะนำกลับไปโดยเร็วที่สุด"
+  },
+  en:{
+    title:"The Story of Real Wood from Northern Thailand — Furniture Made to Outlast Generations",
+    lead:"From logs grown in Northern Thailand, through the hands of craftsmen at Hang Chat, Lampang, to furniture that lives in your home for generations.",
+    h1:"Why Solid Wood Furniture Is Different From Ordinary Furniture",
+    p1:"Solid wood furniture isn't just home decor — it's craftsmanship with a story in every grain, knot, and natural mark. Unlike plywood or MDF furniture mass-produced to look identical, every Wood Stock piece has its own unique grain; no two pieces are ever exactly alike, even within the same design. That's the charm that keeps real wood in demand, no matter how much time passes.",
+    h2:"Single Slab vs. Edge-Glued Wood — What's the Difference?",
+    p2:"Many customers ask what separates a \"single slab\" from \"edge-glued\" wood. Rain tree (also called monkeypod) typically grows a very wide trunk, so it can be sawn into one large slab with no joints at all — a genuine single slab. Teak, while excellent quality, has controlled growth and trunk-size limits, so several teak boards are usually edge-glued together with specialized technique to form one wide, seamless-looking surface. Both are equally strong and durable; they simply differ in grain character and price, based on how scarce the raw material is.",
+    h3:"From Raw Logs to Furniture In Your Home",
+    p3:"Every step happens at our own factory in Hang Chat, Lampang:",
+    steps:["Sourcing logs from legally certified plantations","Sawing and kiln-drying to standard, to reduce future warping","Sanding, cutting, and shaping to the customer's design","Painting and sealing to protect against insects and moisture","Quality inspection and careful packing before shipping"],
+    p4:"Customers are welcome to visit the factory in person to see the production process with their own eyes — not just pretty photos in an online catalog.",
+    h4:"Custom Orders — Built to Your Budget and Design",
+    p5:"Beyond the 70+ ready-made items in the Wood Stock catalog, we also take custom orders to match a customer's design and budget — an oversized dining table, a bed that must fit an exact room, or built-in furniture for a project. Customers can send inspiration photos or a design with the desired size and budget, and we'll estimate a price and get back with advice as quickly as possible."
+  },
+  zh:{
+    title:"来自泰国北部的实木故事 — 可传承数代的家具",
+    lead:"从泰北种植的原木，经过南邦府杭猜县工匠之手，成为您家中可使用数代的家具。",
+    h1:"为什么实木家具与普通家具不同",
+    p1:"实木家具不仅是家居装饰，更是承载故事的手工艺品，每一道木纹、结疤与天然痕迹都独一无二。与批量生产、外观一致的夹板或密度板家具不同，Wood Stock 的每件实木家具都有专属木纹，即使同款也没有两件完全相同。这正是实木历久不衰、始终受欢迎的魅力所在。",
+    h2:"整板木材与拼接木材有何不同？",
+    p2:"许多客户好奇「整板」与「拼接」木材的差异——雨豆木（又称金合欢木）树干通常较粗，可直接锯成一块无拼接的完整木板，是真正的整板木材。柚木虽然材质优良，但受限于树干尺寸与种植规范，通常需要以专门工艺将多块柚木板拼接（连接）成同等宽度、外观如整板般的桌面。两者在坚固耐用度上不相上下，差异主要在于木纹质感与价格，取决于原料的稀缺程度。",
+    h3:"从原木到您家中的家具",
+    p3:"每一道工序都在我们位于南邦府杭猜县的自有工厂完成：",
+    steps:["从合法认证的种植园筛选原木","按标准锯切与窑干，以减少日后变形","依客户设计打磨、裁切与塑形","喷漆封面，防蛀防潮","出货前进行品质检验与细心包装"],
+    p4:"欢迎客户亲自到工厂参观，亲眼见证生产流程——而不仅仅是网上目录中的美丽照片。",
+    h4:"定制服务 — 按您的预算与设计打造",
+    p5:"除了目录中70多款现成商品，Wood Stock 也接受依客户设计与预算定制的订单，无论是特殊尺寸的餐桌、需要贴合房间的床架，或是项目用的定制家具。客户可发送灵感图片或设计稿，并注明尺寸与预算，我们会尽快为您估价并给予建议。"
+  }
+};
+function renderSeoArticle(){
+  const a = SEO_ARTICLE[currentLang];
+  document.getElementById('seoArticleBody').innerHTML = `
+    <h2>${a.title}</h2>
+    <p class="seo-lead">${a.lead}</p>
+    <h3>${a.h1}</h3>
+    <p>${a.p1}</p>
+    <h3>${a.h2}</h3>
+    <p>${a.p2}</p>
+    <h3>${a.h3}</h3>
+    <p>${a.p3}</p>
+    <ul>${a.steps.map(s=>`<li>${s}</li>`).join('')}</ul>
+    <p>${a.p4}</p>
+    <h3>${a.h4}</h3>
+    <p>${a.p5}</p>
+  `;
+}
+
+/* ---------- service area regions ---------- */
+const SA_REGIONS = {
+  th:["ลำปาง","เชียงใหม่","เชียงราย","ลำพูน","พะเยา","แพร่","น่าน","กรุงเทพฯ และปริมณฑล","ภาคกลาง","ภาคอีสาน","ภาคใต้","ทั่วประเทศไทย"],
+  en:["Lampang","Chiang Mai","Chiang Rai","Lamphun","Phayao","Phrae","Nan","Bangkok & Vicinity","Central Thailand","Northeast (Isan)","Southern Thailand","Nationwide"],
+  zh:["南邦府","清迈","清莱","南奔府","帕夭府","帕府","难府","曼谷及周边","中部地区","东北地区（伊善）","南部地区","泰国全境"]
+};
+function renderServiceArea(){
+  document.getElementById('saRegions').innerHTML = SA_REGIONS[currentLang].map(r=>`<span>${r}</span>`).join('');
+}
+
+/* ---------- FAQ accordion ---------- */
+const FAQ_DATA = {
+  th:[
+    {q:"เฟอร์นิเจอร์ไม้จริงจาก Wood Stock ผลิตที่ไหน?",a:"ผลิตเองทุกขั้นตอนที่โรงงานของเรา อ.ห้างฉัตร จ.ลำปาง ตั้งแต่คัดไม้ท่อน เลื่อยแปรรูป จนถึงขึ้นรูปเป็นเฟอร์นิเจอร์สำเร็จ ลูกค้าเยี่ยมชมโรงงานได้จริง"},
+    {q:"ไม้แผ่นเดียวคืออะไร ต่างจากไม้ประสานยังไง?",a:"ไม้จามจุรีลำต้นใหญ่ เลื่อยเป็นแผ่นเดียวได้โดยไม่ต้องต่อ ส่วนไม้สักมักนำหลายแผ่นมาประสาน (เชื่อมต่อ) กันให้ได้หน้ากว้างเท่าแผ่นเดียว ทั้งสองแบบแข็งแรงคงทนไม่ต่างกัน ต่างกันที่ลักษณะเนื้อไม้และราคา"},
+    {q:"สั่งขนาดพิเศษนอกเหนือจากแคตตาล็อกได้ไหม?",a:"ได้ค่ะ ใช้ช่อง \"รับทำตามแบบ\" ในเว็บไซต์ แนบรูปภาพและระบุขนาดที่ต้องการ ทางร้านจะประเมินราคาและติดต่อกลับ หรือใช้เครื่องคำนวณราคาไม้แผ่นเดียวสำหรับงานตัดตามขนาดที่ต้องการได้ทันที"},
+    {q:"ใช้เวลาผลิตนานแค่ไหน?",a:"โดยทั่วไปใช้เวลา 7–45 วัน ขึ้นอยู่กับปริมาณและความซับซ้อนของงาน ทางร้านจะแจ้งกำหนดการที่ชัดเจนหลังยืนยันคำสั่งซื้อ"},
+    {q:"รอยแตก ปม หรือร่องรอยตามธรรมชาติในเนื้อไม้ถือว่าเป็นตำหนิไหม?",a:"ไม่ใช่ตำหนิค่ะ ถือเป็นเอกลักษณ์เฉพาะตัวของไม้จริงแต่ละแผ่น ไม้จริงจะไม่เนียนเรียบเหมือนไม้สังเคราะห์ ลวดลาย รู หรือรอยแตกตามธรรมชาติเหล่านี้คือเสน่ห์ที่บอกว่าเป็นไม้จริง 100%"},
+    {q:"ชำระเงินยังไง มัดจำกี่เปอร์เซ็นต์?",a:"มัดจำ 50% เพื่อเริ่มการผลิต และชำระส่วนที่เหลือ 50% พร้อมค่าขนส่งก่อนจัดส่งสินค้า รับชำระผ่านโอนธนาคารและบัตรเครดิต"},
+    {q:"มีรับประกันสินค้าไหม?",a:"มีค่ะ รับประกันโครงสร้างและงานฝีมือตามเงื่อนไขของร้าน หากพบปัญหาจากการผลิตภายในระยะเวลารับประกัน ทางร้านยินดีแก้ไขให้"},
+    {q:"ไปดูโรงงานและเลือกแผ่นไม้จริงก่อนสั่งได้ไหม?",a:"ได้ค่ะ ยินดีต้อนรับลูกค้าที่สะดวกเดินทางมาที่โรงงาน อ.ห้างฉัตร จ.ลำปาง เพื่อดูแผ่นไม้จริงและขั้นตอนการผลิตก่อนตัดสินใจสั่งซื้อ"}
+  ],
+  en:[
+    {q:"Where is Wood Stock furniture made?",a:"Everything is made in-house at our factory in Hang Chat, Lampang — from selecting logs and sawing, all the way to finished furniture. Customers are welcome to visit the factory in person."},
+    {q:"What is a single slab, and how is it different from edge-glued wood?",a:"Rain tree has a wide trunk that can be sawn into one seamless slab with no joints. Teak is usually made from several boards edge-glued together to reach the same width. Both are equally strong and durable — they differ in grain character and price."},
+    {q:"Can I order a custom size outside the catalog?",a:"Yes — use the \"Custom Order\" section on the site, attach photos, and specify your desired size; we'll estimate a price and follow up. Or use the price estimator for slab-cut sizing instantly."},
+    {q:"How long does production take?",a:"Typically 7–45 days, depending on quantity and complexity. We'll confirm an exact timeline once your order is confirmed."},
+    {q:"Are natural cracks, knots, or marks in the wood considered defects?",a:"No — these are the unique character of real wood, not defects. Real wood isn't perfectly smooth like synthetic materials; natural grain, small holes, or hairline cracks are exactly what tells you it's 100% genuine wood."},
+    {q:"How do I pay, and what's the deposit?",a:"A 50% deposit starts production, with the remaining 50% plus shipping due before delivery. We accept bank transfer and credit card."},
+    {q:"Is there a warranty?",a:"Yes — we warranty structure and craftsmanship under our shop's terms. If a production issue arises within the warranty period, we're happy to fix it."},
+    {q:"Can I visit the factory and pick my own slab before ordering?",a:"Absolutely — customers are welcome to visit our factory in Hang Chat, Lampang to see real wood slabs and the production process before deciding."}
+  ],
+  zh:[
+    {q:"Wood Stock 家具在哪里生产？",a:"所有工序都在我们位于南邦府杭猜县的自有工厂完成——从选材、锯切到成品家具，欢迎客户亲自到工厂参观。"},
+    {q:"什么是整板木材？与拼接木材有何不同？",a:"雨豆木树干较粗，可锯成无拼接的整块木板。柚木通常需要将多块木板拼接才能达到相同宽度。两者坚固耐用程度相当，差异在于木纹质感与价格。"},
+    {q:"可以订购目录之外的特殊尺寸吗？",a:"可以，请使用网站上的「定制订单」区块，上传图片并注明所需尺寸，我们会为您估价并回复。也可使用价格计算器即时估算切板尺寸价格。"},
+    {q:"生产需要多长时间？",a:"一般需要7-45天，视数量与复杂程度而定。订单确认后我们会提供明确的时间表。"},
+    {q:"木材上的天然裂纹、结疤或痕迹算瑕疵吗？",a:"不算瑕疵，这些正是实木独有的特色，并非缺陷。实木不会像人造材料那样完全平滑，天然纹理、小孔或细纹正说明这是100%真正的实木。"},
+    {q:"如何付款？订金比例是多少？",a:"支付50%订金即可开始生产，剩余50%及运费于出货前支付。接受银行转账及信用卡付款。"},
+    {q:"是否提供保固？",a:"提供，我们依店铺条款保固结构与工艺。若在保固期内出现生产问题，我们很乐意为您修复。"},
+    {q:"可以先到工厂看实际木板再下单吗？",a:"当然可以，欢迎客户亲自到南邦府杭猜县的工厂查看实木木板与生产流程后再决定下单。"}
+  ]
+};
+function renderFaq(){
+  document.getElementById('faqList').innerHTML = FAQ_DATA[currentLang].map((item,i)=>`
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">${item.q}<span class="faq-plus">+</span></button>
+      <div class="faq-a"><p>${item.a}</p></div>
+    </div>
+  `).join('');
+}
+
 /* ---------- process steps ---------- */
 const STEPS = {
   th:["แจ้งแบบและจำนวนที่ต้องการ","รับใบเสนอราคา + แบบ","มัดจำ 50%","จัดทำ 7–45 วัน ตามความยาก-ง่าย","โอนส่วนที่เหลือ + ค่าขนส่ง","รอรับสินค้า"],
@@ -1101,6 +1412,32 @@ document.getElementById('budgetInput').addEventListener('keypress', e=>{ if(e.ke
    6. Paste that URL into SHEET_WEBAPP_URL below, between the quotes.
    Leave it as "" to disable sheet-saving (form still works via Copy/Call). */
 const SHEET_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbwHp2IiYQGM1LCWRiT66rRyFSuGgYPE8jx1Z5kpsEmsPLnT2J4RparjekBWX3QY3J4/exec";
+
+/* ================= CUSTOM ORDER FORM -> MAKE.COM/ZAPIER WEBHOOK =================
+   This powers the "รับทำตามแบบ" (custom order) form: name/phone/Line/description/
+   size/budget + attached reference photos. Unlike the quote form above (Apps Script,
+   text only), this one needs to carry FILE uploads, so it posts multipart/form-data
+   straight to a Make.com (or Zapier) Custom Webhook instead of Apps Script.
+
+   Setup (Make.com — Zapier is the same idea with different naming):
+   1. In Make.com, create a new Scenario. Add module: Webhooks > Custom webhook.
+      Click "Add", name it, copy the webhook URL it gives you.
+   2. Paste that URL into CUSTOM_ORDER_WEBHOOK_URL below.
+   3. Run the scenario once in "listen" mode, then submit this form once from the
+      live site so Make can learn the field/file structure automatically.
+   4. Add module: Google Sheets > Add a Row. Map: timestamp, name, phone, line,
+      detail, width, length, height, budget to your sheet's columns.
+   5. Add module: Google Drive > Upload a File. Map the incoming file field(s) from
+      the webhook. This returns a shareable file URL/link per uploaded image.
+   6. Add module: LINE > Send a Message (or HTTP > Make a request to
+      https://api.line.me/v2/bot/message/push if Make's LINE app doesn't support
+      groups) — send the customer's detail/size/budget text plus the Google Drive
+      image link(s) from step 5 to your LINE group (same LINE_GROUP_ID already set
+      up in google-apps-script.txt).
+   7. Turn the scenario ON (not just "run once") so it keeps listening.
+   Leave CUSTOM_ORDER_WEBHOOK_URL as "" to disable — the form will just show a
+   friendly "not connected yet" message instead of failing silently. */
+const CUSTOM_ORDER_WEBHOOK_URL = "";
 
 let cart = [];
 function addProductToCart(code){
@@ -1186,6 +1523,57 @@ function submitQuote(e){
     statusEl.innerHTML = '';
   }
 }
+
+function submitCustomOrder(e){
+  e.preventDefault();
+  const statusEl = document.getElementById('customStatus');
+
+  if(!CUSTOM_ORDER_WEBHOOK_URL){
+    statusEl.className = 'send-status show fail';
+    statusEl.innerHTML = `<span class="dot"></span> ${t('customNotConnected')}`;
+    return;
+  }
+
+  const name = document.getElementById('cfName').value;
+  const phone = document.getElementById('cfPhone').value;
+  const line = document.getElementById('cfLine').value;
+  const detail = document.getElementById('cfDetail').value;
+  const w = document.getElementById('cfW').value;
+  const l = document.getElementById('cfL').value;
+  const h = document.getElementById('cfH').value;
+  const budget = document.getElementById('cfBudget').value;
+  const files = document.getElementById('cfFiles').files;
+
+  const formData = new FormData();
+  formData.append('timestamp', new Date().toLocaleString('th-TH'));
+  formData.append('name', name);
+  formData.append('phone', phone);
+  formData.append('line', line);
+  formData.append('detail', detail);
+  formData.append('width', w);
+  formData.append('length', l);
+  formData.append('height', h);
+  formData.append('budget', budget);
+  formData.append('lang', currentLang);
+  for(let i=0;i<files.length;i++){
+    formData.append('photo'+(i+1), files[i], files[i].name);
+  }
+
+  statusEl.className = 'send-status show pending';
+  statusEl.innerHTML = `<span class="dot"></span> ${t('sendPending')}`;
+
+  fetch(CUSTOM_ORDER_WEBHOOK_URL, { method:'POST', mode:'no-cors', body: formData })
+    .then(()=>{
+      statusEl.className = 'send-status show ok';
+      statusEl.innerHTML = `<span class="dot"></span> ${t('customSendOk')}`;
+      document.getElementById('customForm').reset();
+    })
+    .catch(()=>{
+      statusEl.className = 'send-status show fail';
+      statusEl.innerHTML = `<span class="dot"></span> ${t('sendFail')}`;
+    });
+}
+
 function copySummary(){
   const ta = document.getElementById('summaryText');
   ta.select(); ta.setSelectionRange(0,99999);
@@ -1193,6 +1581,12 @@ function copySummary(){
   alert(t('copyAlert'));
 }
 function closeModal(){ document.getElementById('modalBg').classList.remove('open'); }
+function toggleFaq(btn){
+  const item = btn.closest('.faq-item');
+  const wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(el=>el.classList.remove('open'));
+  if(!wasOpen) item.classList.add('open');
+}
 
 /* ================= INIT ================= */
 populateSizeSelectors();
@@ -1200,6 +1594,9 @@ renderFilters();
 renderGrid();
 renderNeeds();
 renderWoodKnowledge();
+renderSeoArticle();
+renderServiceArea();
+renderFaq();
 renderSteps();
 updateCart();
 document.getElementById('budgetInput').placeholder = t('budgetPlaceholder');
