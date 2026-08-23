@@ -270,8 +270,8 @@
   .filter-chip.active{background:var(--walnut); color:var(--gold); border-color:var(--walnut);}
   .grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:18px;}
   .card{background:#fff; border-radius:28px; overflow:hidden; border:1px solid #efe6d6; box-shadow:0 10px 26px -18px rgba(30,46,40,.22); display:flex; flex-direction:column;}
-  .card-media{height:140px; position:relative; background:linear-gradient(135deg,#c69a5a,#7a4e22); display:flex; align-items:center; justify-content:center; overflow:hidden;}
-  .card-media img{width:100%; height:100%; object-fit:cover;}
+  .card-media{height:190px; position:relative; background:linear-gradient(135deg,#f3e6cf,#e8d3a8); display:flex; align-items:center; justify-content:center; overflow:hidden; padding:8px;}
+  .card-media img{width:100%; height:100%; object-fit:contain;}
   .card-media .code-badge{position:absolute; top:8px; left:8px; background:rgba(30,32,34,.72); color:var(--gold); font-size:.68rem; font-weight:700; padding:4px 9px; border-radius:999px;}
   .card-media span.cat-label{font-family:'Noto Serif Thai',serif; color:rgba(253,251,247,.9); font-size:.74rem; border:1px solid rgba(253,251,247,.4); padding:4px 11px; border-radius:999px;}
   .card-body{padding:16px; display:flex; flex-direction:column; gap:6px; flex:1;}
@@ -317,7 +317,7 @@
     .cart-btn{padding:11px 18px; min-height:44px;}
   }
   .review-card{background:#fff; border:1px solid #f0dca8; border-radius:28px; overflow:hidden; box-shadow:0 10px 26px -18px rgba(30,46,40,.22);}
-  .review-card img{width:100%; aspect-ratio:3/4; object-fit:cover; display:block;}
+  .review-card img{width:100%; max-height:420px; object-fit:contain; background:linear-gradient(135deg,#f3e6cf,#e8d3a8); display:block;}
   .review-card figcaption{padding:12px 14px 16px; font-size:.8rem; color:var(--walnut); line-height:1.6; font-style:italic;}
 
   /* ---------- process / footer ---------- */
@@ -660,6 +660,25 @@
   </div>
 </section>
 
+<section class="reviews-section" style="background:#fff8ea; padding-top:0;">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow2">MORE WORK</div>
+      <h2>ผลงานเพิ่มเติมจากร้านค้าออนไลน์</h2>
+      <p>ดูผลงานเพิ่มเติมและสั่งซื้อได้ที่ร้านค้าออนไลน์ LnwShop ของเรา</p>
+    </div>
+    <div class="reviews-grid">
+      <figure class="review-card"><a href="https://woodstockcreationfurniture.lnwshop.com/" target="_blank" rel="noopener"><img src="https://cq.lnwfile.com/_/cq/_raw/lb/g8/m3.png" alt="ผลงาน Woodstock บน LnwShop" loading="lazy"></a></figure>
+      <figure class="review-card"><a href="https://woodstockcreationfurniture.lnwshop.com/" target="_blank" rel="noopener"><img src="https://cq.lnwfile.com/_/cq/_raw/vg/5e/zj.jpg" alt="ผลงาน Woodstock บน LnwShop" loading="lazy"></a></figure>
+      <figure class="review-card"><a href="https://woodstockcreationfurniture.lnwshop.com/" target="_blank" rel="noopener"><img src="https://cq.lnwfile.com/_/cq/_raw/c1/w7/80.jpg" alt="ผลงาน Woodstock บน LnwShop" loading="lazy"></a></figure>
+      <figure class="review-card"><a href="https://woodstockcreationfurniture.lnwshop.com/" target="_blank" rel="noopener"><img src="https://cq.lnwfile.com/_/cq/_raw/f7/4o/jb.jpg" alt="ผลงาน Woodstock บน LnwShop" loading="lazy"></a></figure>
+    </div>
+    <div style="text-align:center; margin-top:28px;">
+      <a class="btn-gold" href="https://woodstockcreationfurniture.lnwshop.com/" target="_blank" rel="noopener" style="display:inline-block;">ดูสินค้าทั้งหมดที่ร้าน LnwShop</a>
+    </div>
+  </div>
+</section>
+
 <section class="process">
   <div class="wrap">
     <div class="section-head">
@@ -702,6 +721,7 @@
       <h3 data-i18n="footContact">ติดต่อเรา</h3>
       <p><a href="tel:0864415399">โทร/LINE: 086-441-5399</a></p>
       <p data-i18n="footShip">ขายปลีก-ขายส่ง ทั่วประเทศไทย</p>
+      <p><a href="https://woodstockcreationfurniture.lnwshop.com/" target="_blank" rel="noopener">ช้อปออนไลน์ที่ LnwShop &rarr;</a></p>
     </div>
     <div>
       <h3 data-i18n="footNoteTitle">หมายเหตุ</h3>
